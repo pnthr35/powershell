@@ -1,5 +1,5 @@
 # Testing User interactions in Graph Powershell
-Connect-MgGraph -Scopes "Directory.ReadWrite.All","User.ReadWrite.All"
+Connect-MgGraph -AccessToken ($Env:token | ConvertTo-SecureString -AsPlainText -Force)
 $UserLookup = @{}
 [array]$Users = Get-MgUser -All -Filter "usertype eq 'Member'" -Property Id, DisplayName
 
