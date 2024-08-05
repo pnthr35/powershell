@@ -10,6 +10,6 @@ foreach ($User in $Users) {
 Write-Host $UserLookup
 Write-Host "All Users:"
 foreach ($User in $Users) {
-    $User.DisplayName
+    $User.DisplayName + $User.Id
 }
 Write-Host "Done!"
