@@ -1,5 +1,5 @@
 # Interaction with Intune
-Connect-MgGraph 
+Connect-MgGraph "DeviceManagementManagedDevices.Read.All"
 
 # -AccessToken ($Env:token | ConvertTo-SecureString -AsPlainText -Force)
 
