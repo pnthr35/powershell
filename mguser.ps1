@@ -1,5 +1,11 @@
 # Testing User interactions in Graph Powershell
-Connect-MgGraph -AccessToken ($Env:token | ConvertTo-SecureString -AsPlainText -Force)
+
+# This connection should run with delegated access
+Connect-MgGraph
+
+# Use with MgGraph and grab a token if needed on the current system
+# -AccessToken ($Env:token | ConvertTo-SecureString -AsPlainText -Force)
+
 $UserLookup = @{}
 [array]$Users = Get-MgUser -All -Filter "usertype eq 'Member'" -Property Id, DisplayName
 
