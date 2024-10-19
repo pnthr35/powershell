@@ -1,1 +1,4 @@
-# Get license status for Users and export?
+Connect-MgGraph
+
+$Users = Get-MgUser
+Write-Host $Users
