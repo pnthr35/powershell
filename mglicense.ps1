@@ -3,6 +3,7 @@ Connect-MgGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All", "Group.
 $Users = Get-MgUser
 $PowerAutomateLicense = Get-MgSubscribedSku -All | Where-Object SkuPartNumber -eq 'FLOW_FREE'
 
+# Remember that User in Restricted AU's will not be affected, must use the AU Admin for this script
 foreach ($item in $Users) {
     Write-Host $item.DisplayName
 
