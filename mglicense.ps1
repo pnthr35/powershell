@@ -11,7 +11,7 @@ foreach ($item in $Users) {
    Set-MgUserLicense -UserId $item.Id -AddLicenses @{SkuId = $PowerAutomateLicense.SkuId} -RemoveLicenses @()
 
    # Remove licenses for Power Automate Free???
-   # Set-MgUserLicense -UserId $item.Id -RemoveLicenses @("FLOW_FREE") -AddLicenses @{}
+   # Set-MgUserLicense -UserId $item.Id -RemoveLicenses @($PowerAutomateLicense.SkuId) -AddLicenses @{}
 
    Get-MgUserLicenseDetail -UserId $item.Id | Format-List
 }
