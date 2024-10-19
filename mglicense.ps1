@@ -1,4 +1,8 @@
 Connect-MgGraph
 
 $Users = Get-MgUser
-Write-Host $Users.Id
+
+foreach ($item in $Users) {
+   Write-Host $item.DisplayName
+   Get-MgUserLicenseDetail -UserId $item.Id | Format-List
+}
