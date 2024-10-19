@@ -1,7 +1,7 @@
 Connect-MgGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All", "Group.ReadWrite.All"
 
 $Users = Get-MgUser
-$PowerAutomateLicense = Get-MgSubscribedSku -All | Where SkuPartNumber -eq 'FLOW_FREE'
+$PowerAutomateLicense = Get-MgSubscribedSku -All | Where-Object SkuPartNumber -eq 'FLOW_FREE'
 
 foreach ($item in $Users) {
     Write-Host $item.DisplayName
