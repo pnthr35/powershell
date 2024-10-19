@@ -1,4 +1,4 @@
 Connect-MgGraph
 
 $Users = Get-MgUser
-Write-Host $Users
+Write-Host $Users.Id
