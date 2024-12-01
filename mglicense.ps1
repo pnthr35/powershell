@@ -7,6 +7,7 @@ $PowerAutomateLicense = Get-MgSubscribedSku -All | Where-Object SkuPartNumber -e
 foreach ($item in $Users) {
     Write-Host $item.DisplayName
     
+    # Skip all AD-synchronized accounts
     if ($item.DisplayName -eq "On-Premises Directory Synchronization Service Account")
     {
         Write-Host "Skipping AD Sync Account" -ForegroundColor red
