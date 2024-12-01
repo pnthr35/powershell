@@ -6,13 +6,17 @@ $PowerAutomateLicense = Get-MgSubscribedSku -All | Where-Object SkuPartNumber -e
 # Check if Group exists
 foreach ($item in $Groups)
 {
-    if ($item.DisplayName -eq "Testing Group")
+    if ($item.DisplayName -eq "Test Group")
     {
         Write-Host "Group already exists..."
-        Write-Host $item.DisplayName
+        $targetGroup = $item.Id
     }
 
 }
 
-# Set-MgGroupLicense -GroupId $groupId -AddLicenses $PowerAutomateLicense
+# Add a License to a Group
+Set-MgGroupLicense -GroupId $targetGroup -AddLicenses @{SkuId = $PowerAutomateLicense.SkuId } -RemoveLicenses @()
+
+# Remove a License from a Group
+# Set-MgUserLicense -UserId $item.Id -RemoveLicenses @($PowerAutomateLicense.SkuId) -AddLicenses @{}
 Write-Host "Done!"
