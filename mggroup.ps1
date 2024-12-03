@@ -3,10 +3,21 @@
 Connect-MgGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All", "Group.ReadWrite.All"
 
 $Groups = Get-MgGroup
-Write-Host $Groups
 
 # See if a Group exists
+foreach ($group in $groups)
+{
+    Write-Host $group.DisplayName
+    if ($group.DisplayName -eq "GroupTestGraph")
+    {
+        Write-Host "Group exists"
+        $groupExists = $true
+    }
+}
 
-# If not, create the Group
+if (!$groupExists)
+{
+    New-MgGroup -DisplayName 'GroupTestGraph' -MailEnabled:$False -MailNickName 'grouptestgraph' -SecurityEnabled   
+}
 
 # Write all Groups to a .csv file
