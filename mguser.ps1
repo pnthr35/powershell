@@ -18,6 +18,6 @@ foreach ($User in $Users) {
 Write-Host $UserLookup
 Write-Host "All Users:"
 foreach ($User in $Users) {
-    $User.DisplayName + "`n" + $User.Id
+    $User.DisplayName + "`t`t`t" + $User.Id
 }
 Write-Host "Done!"
