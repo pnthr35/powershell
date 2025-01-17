@@ -6,10 +6,10 @@ Connect-MgGraph
 # Use with MgGraph and grab a token if needed on the current system
 # -AccessToken ($Env:token | ConvertTo-SecureString -AsPlainText -Force)
 
+# Get Users
 $UserLookup = @{}
 [array]$Users = Get-MgUser -All -Filter "usertype eq 'Member'" -Property Id, DisplayName
 
-# Get Users
 foreach ($User in $Users) {
     $UserLookup.Add($User.Id, $User.DisplayName)
 }
