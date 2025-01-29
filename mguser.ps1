@@ -16,7 +16,6 @@ foreach ($User in $Users) {
 
 # Output Users
 Write-Host $UserLookup
-Write-Host "All Users:"
 foreach ($User in $Users) {
     # Find better way to format (todo)
     $User.DisplayName + "`t`t`t" + $User.Id
