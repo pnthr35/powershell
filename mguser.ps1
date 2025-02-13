@@ -18,6 +18,6 @@ foreach ($User in $Users) {
 Write-Host $UserLookup
 foreach ($User in $Users) {
     # Find better way to format (todo)
-    $User.DisplayName + "`t`t`t" + $User.Id
+    $User.DisplayName + "`t`t`t" + $User.Department
 }
 Write-Host "Done!"
