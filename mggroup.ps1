@@ -5,7 +5,7 @@ Connect-MgGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All", "Group.
 $Groups = Get-MgGroup
 $groupExists = $false
 
-# See if a Group exists
+# See if a Group exists, in this case GroupTestGraph
 foreach ($group in $groups) {
     Write-Host $group.DisplayName
     if ($group.DisplayName -eq "GroupTestGraph") {
@@ -19,6 +19,7 @@ if ($groupExists) {
     #Write-Host $group.DisplayName
     Remove-MgGroup -GroupId $group.Id
 } else {
+    # If group does not exist, we will create it
     Write-Host "Group does not exist, creating the Group!"
     New-MgGroup -DisplayName 'GroupTestGraph' -MailEnabled:$False -MailNickName 'grouptestgraph' -SecurityEnabled  
 }
