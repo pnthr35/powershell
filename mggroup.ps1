@@ -20,8 +20,8 @@ if ($groupExists) {
     Remove-MgGroup -GroupId $group.Id
 } else {
     # If group does not exist, we will create it
-    Write-Host "Group does not exist, creating the Group!"
-    New-MgGroup -DisplayName 'GroupTestGraph' -MailEnabled:$False -MailNickName 'grouptestgraph' -SecurityEnabled  
+    Write-Host "Group does not exist, creating the group!"
+    New-MgGroup -DisplayName 'GroupScriptTestGraph' -MailEnabled:$False -MailNickName 'grouptestgraph' -SecurityEnabled  
 }
 
 # Write all Groups to a .csv file
