@@ -1,3 +1,5 @@
+Connect-MgGraph -Scopes "Directory.Read.All", "User.Read.All", "Group.Read.All"
+
 # Get all directory roles
 $Roles = Get-MgRoleManagementDirectoryRoleDefinition
 
