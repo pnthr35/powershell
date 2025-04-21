@@ -16,10 +16,10 @@ foreach ($item in $Users) {
 
     # Assign licenses to Power Automate Free, set Usage Location if needed first as well
     # Update-MgUser -UserId $item.Id -UsageLocation US
-    # Set-MgUserLicense -UserId $item.Id -AddLicenses @{SkuId = $PowerAutomateLicense.SkuId } -RemoveLicenses @()
+    Set-MgUserLicense -UserId $item.Id -AddLicenses @{SkuId = $PowerAutomateLicense.SkuId } -RemoveLicenses @()
 
     # Remove licenses for Power Automate Free
-    Set-MgUserLicense -UserId $item.Id -RemoveLicenses @($PowerAutomateLicense.SkuId) -AddLicenses @{}
+    # Set-MgUserLicense -UserId $item.Id -RemoveLicenses @($PowerAutomateLicense.SkuId) -AddLicenses @{}
 
     Get-MgUserLicenseDetail -UserId $item.Id | Format-List
 }

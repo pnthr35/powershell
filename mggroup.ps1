@@ -8,14 +8,14 @@ $groupExists = $false
 # See if a Group exists, in this case GroupTestGraph
 foreach ($group in $groups) {
     Write-Host $group.DisplayName
-    if ($group.DisplayName -eq "GroupTestGraph") {
+    if ($group.DisplayName -eq "GroupScriptTestGraph") {
         $groupExists = $true
     }
 }
 
 if ($groupExists) {
     Write-Host "Group exists, deleting the Group!"
-    $group = Get-MgGroup -Filter "DisplayName eq 'GroupTestGraph'"
+    $group = Get-MgGroup -Filter "DisplayName eq 'GroupScriptTestGraph'"
     #Write-Host $group.DisplayName
     Remove-MgGroup -GroupId $group.Id
 } else {
