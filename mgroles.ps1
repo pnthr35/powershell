@@ -9,4 +9,6 @@ ForEach ($Role in $Roles) {
             Write-Host ("Members of the {0} directory role:" -f $Role.displayName)
             $RoleMembers.additionalProperties.displayName
         }
+
+    Write-Host "End of processing..."
 }
