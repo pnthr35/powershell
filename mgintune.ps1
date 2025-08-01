@@ -1,4 +1,4 @@
-# Connect
+# Connect with only Read permissions
 Connect-MgGraph "DeviceManagementManagedDevices.Read.All"
 
 # Use an access token if needed, generally just use delegated access for labbing
