@@ -1,9 +1,22 @@
 Connect-MgGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All", "Group.ReadWrite.All"
 
+# Current workaround for assigning licenses...
 $users = Get-MgUser
 $PowerAutomateLicense = Get-MgSubscribedSku -All | Where-Object SkuPartNumber -eq 'FLOW_FREE'
 
+# License details here
+$licenses = @{
+  addLicenses = @(@{SkuId = $PowerAutomateLicense.SkuId})
+  removeLicenses = @()
+}
+
+Write-Host $users[0].DisplayName
+Get-MgUserLicenseDetail -UserId $users[0].Id
+Set-MgUserLicense -UserId $users[0].Id -BodyParameter $licenses
+
 # Remember that User in Restricted AU's will not be affected, must use the AU Admin for this script
+
+<#
 foreach ($user in $users) {
     Write-Host $user.DisplayName
     
@@ -23,3 +36,4 @@ foreach ($user in $users) {
 
     Get-MgUserLicenseDetail -UserId $user.Id | Format-List
 }
+#>
