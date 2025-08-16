@@ -20,6 +20,8 @@ foreach ($device in $devices)
 
     # Get Device information, the most important information is detailed here
     # TODO: Organize information and write to CSV? Possibly SQL for display on internal website?
+    # Note: In PowerShell, you can set properties as variables and use them in the invocation
+    # $property = 'Id' and then $myObj.$property
     <#
     Write-Host "Device Name:" $device.DeviceName 
     Write-Host "Device ID:" $device.Id
