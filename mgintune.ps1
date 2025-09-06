@@ -4,6 +4,7 @@ Connect-MgGraph "DeviceManagementManagedDevices.Read.All"
 # Use an access token if needed, generally just use delegated access for labbing
 # -AccessToken ($Env:token | ConvertTo-SecureString -AsPlainText -Force)
 
+# Create list and get devices in the Tenant
 $complianceCheckReport = [System.Collections.Generic.List[Object]]::new()
 $devices = Get-MgDeviceManagementManagedDevice -all:$true
 
