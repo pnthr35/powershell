@@ -18,7 +18,7 @@ Set-MgUserLicense -UserId $users[0].Id -BodyParameter $licenses
 
 # Remember that User in Restricted AU's will not be affected, must use the AU Admin for this script
 
-<#
+<# old script that broke due to graph changes?
 foreach ($user in $users) {
     Write-Host $user.DisplayName
     
