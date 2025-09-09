@@ -6,7 +6,7 @@ $Roles = Get-MgRoleManagementDirectoryRoleDefinition
 
 Write-Host "Found $($Roles.Count) directory roles"
 
-# Initialize array for role assignments
+# Initialize List for role assignments
 $RoleAssignments = [System.Collections.Generic.List[PSCustomObject]]::new()
 
 # Process each role
