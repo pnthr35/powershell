@@ -2,7 +2,7 @@
 Connect-MgGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All", "Group.ReadWrite.All"
 
 # Adapt script as follows:
-# Get a User and then display their Roles
+# Get a User (Prompt?) and then display their Roles
 # For full reporting use mgroleassignment.ps1
 
 [array]$Roles = Get-MgDirectoryRole | Sort-Object displayName
