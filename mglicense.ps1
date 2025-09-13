@@ -1,10 +1,10 @@
 Connect-MgGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All", "Group.ReadWrite.All"
 
-# Current workaround for assigning licenses...
+# Current workaround for assigning licenses
 $users = Get-MgUser
 $PowerAutomateLicense = Get-MgSubscribedSku -All | Where-Object SkuPartNumber -eq 'FLOW_FREE'
 
-# License details here
+# License actions here
 $licenses = @{
     addLicenses = @(@{SkuId = $PowerAutomateLicense.SkuId})
     # addLicenses    = @{}
@@ -12,13 +12,14 @@ $licenses = @{
     removeLicenses = @()
 }
 
+# Get/Set Licenses
 Write-Host $users[0].DisplayName
 Get-MgUserLicenseDetail -UserId $users[0].Id
 Set-MgUserLicense -UserId $users[0].Id -BodyParameter $licenses
 
 # Remember that User in Restricted AU's will not be affected, must use the AU Admin for this script
 
-<# old script that broke due to graph changes?
+<# old script that broke due to graph changes? Check functionality after PowerShell updates...
 foreach ($user in $users) {
     Write-Host $user.DisplayName
     

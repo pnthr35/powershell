@@ -27,4 +27,6 @@ if ($groupExists) {
     New-MgGroup -DisplayName 'GroupScriptTestGraph' -MailEnabled:$False -MailNickName 'grouptestgraph' -SecurityEnabled  
 }
 
-# Write all Groups to a .csv file
+# Todo
+# Organize results into an Object List
+# Write all Groups to a .csv file?
