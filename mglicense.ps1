@@ -13,6 +13,7 @@ $licenses = @{
 }
 
 # Get/Set Licenses
+# TODO: Implement a loop again to do all Users or a subset of Users by Department maybe?
 Write-Host $users[0].DisplayName
 Get-MgUserLicenseDetail -UserId $users[0].Id
 Set-MgUserLicense -UserId $users[0].Id -BodyParameter $licenses
