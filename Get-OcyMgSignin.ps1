@@ -1,3 +1,3 @@
 # TODO: Get quick sign in activities of specified User or Users...
 
-# Get-MgUser -UserId c9cca257-49c8-4ad5-9082-d02e95acb426 -Property SignInActivity | Select-Object -ExpandProperty SignInActivity
+# Get-MgUser -UserId [UserId] -Property SignInActivity | Select-Object -ExpandProperty SignInActivity
