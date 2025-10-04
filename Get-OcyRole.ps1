@@ -1,7 +1,7 @@
 # Quickly get users for a specific Role
 Connect-MgGraph -Scopes "Directory.Read.All", "User.Read.All", "Group.Read.All"
 
-# Revise to get Role from command input
+# Todo: Revise to get Role from command input
 # Eg. Get-OcyMgRole -Role "User Administrator", "Global Administrator"
 $Roles = Get-MgRoleManagementDirectoryRoleDefinition
 Write-Host "Found $($Roles.Count) directory roles"
