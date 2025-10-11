@@ -15,8 +15,9 @@ Begin {
 
 Process {
 	$userList = New-Object System.Collections.Generic.List[PSObject]
-	
+
 	foreach ($user in $Users) {
+		# Look up the User and add to list
 		$temp = Get-MgUser -Filter "userPrincipalname eq '$user'" -Property DisplayName, SignInActivity
 
 		$userList.Add([PSCustomObject]@{
