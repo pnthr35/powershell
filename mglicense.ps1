@@ -6,14 +6,14 @@ $PowerAutomateLicense = Get-MgSubscribedSku -All | Where-Object SkuPartNumber -e
 
 # License actions here
 $licenses = @{
-    addLicenses = @(@{SkuId = $PowerAutomateLicense.SkuId})
-    # addLicenses    = @{}
-    # removeLicenses = @($PowerAutomateLicense.SkuId)
-    removeLicenses = @()
+    # addLicenses = @(@{SkuId = $PowerAutomateLicense.SkuId})
+    addLicenses    = @{}
+    removeLicenses = @($PowerAutomateLicense.SkuId)
+    # removeLicenses = @()
 }
 
 # Get/Set Licenses
-# TODO: Implement a loop again to do all Users or a subset of Users by Department maybe?
+# TODO: Implement a loop again to do all Users or a subset of Users by Department maybe...
 Write-Host $users[0].DisplayName
 Get-MgUserLicenseDetail -UserId $users[0].Id
 Set-MgUserLicense -UserId $users[0].Id -BodyParameter $licenses
