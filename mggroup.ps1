@@ -13,7 +13,7 @@ foreach ($group in $groups) {
 }
 
 if ($groupExists) {
-    Write-Host "Group exists, deleting the Group!"
+    Write-Host "Group exists, deleting the group!"
     $group = Get-MgGroup -Filter "DisplayName eq 'GroupScriptTestGraph'"
     Write-Host $group.Id
 
