@@ -6,10 +6,10 @@ $PowerAutomateLicense = Get-MgSubscribedSku -All | Where-Object SkuPartNumber -e
 
 # License actions here
 $licenses = @{
-    # addLicenses = @(@{SkuId = $PowerAutomateLicense.SkuId})
-    addLicenses    = @{}
-    removeLicenses = @($PowerAutomateLicense.SkuId)
-    # removeLicenses = @()
+    addLicenses = @(@{SkuId = $PowerAutomateLicense.SkuId})
+    # addLicenses    = @{}
+    # removeLicenses = @($PowerAutomateLicense.SkuId)
+    removeLicenses = @()
 }
 
 # Get/Set Licenses
