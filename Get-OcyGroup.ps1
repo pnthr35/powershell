@@ -1,1 +1,1 @@
-# Get brief information on groups
+# Get information on groups
