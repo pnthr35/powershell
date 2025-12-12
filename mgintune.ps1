@@ -13,6 +13,7 @@ foreach ($device in $devices) {
         User            = $device.UserDisplayName
         deviceName      = $device.DeviceName
         deviceOS        = $device.OSVersion;
+        deviceEnrollmentType = $device.DeviceEnrollmentType;
         complianceState = $device.ComplianceState
         lastSync        = $device.LastSyncDateTime
     }
@@ -37,4 +38,4 @@ foreach ($device in $devices) {
     #>
 }
 
-$complianceCheckReport | Format-Table User, deviceName, deviceOS, complianceState, lastSync
+$complianceCheckReport | Format-Table User, deviceName, deviceOS, deviceEnrollmentType, complianceState, lastSync
