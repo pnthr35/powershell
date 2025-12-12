@@ -7,14 +7,14 @@ Connect-MgGraph "DeviceManagementManagedDevices.Read.All"
 $complianceCheckReport = [System.Collections.Generic.List[Object]]::new()
 $devices = Get-MgDeviceManagementManagedDevice -all:$true
 
-foreach ($device in $devices)
-{
+foreach ($device in $devices) {
     # Current properties
     $reportItem = [PSCustomObject]@{
-        User = $device.UserDisplayName
-        deviceName = $device.DeviceName
+        User            = $device.UserDisplayName
+        deviceName      = $device.DeviceName
+        deviceOS        = $device.OSVersion;
         complianceState = $device.ComplianceState
-        lastSync = $device.LastSyncDateTime
+        lastSync        = $device.LastSyncDateTime
     }
 
     $complianceCheckReport.Add($reportItem)
@@ -37,4 +37,4 @@ foreach ($device in $devices)
     #>
 }
 
-$complianceCheckReport | Format-Table User, deviceName, complianceState, lastSync
+$complianceCheckReport | Format-Table User, deviceName, deviceOS, complianceState, lastSync
