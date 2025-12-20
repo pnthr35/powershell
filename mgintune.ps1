@@ -12,7 +12,7 @@ foreach ($device in $devices) {
     $reportItem = [PSCustomObject]@{
         User            = $device.UserDisplayName
         deviceName      = $device.DeviceName
-        deviceOS        = $device.OSVersion;
+        deviceOS        = $device.OSVersion[5] #($device.OSVersion[5] > 1) ? "Windows 11" : "Windows 10" (todo...)
         deviceEnrollmentType = $device.DeviceEnrollmentType;
         complianceState = $device.ComplianceState
         lastSync        = $device.LastSyncDateTime
