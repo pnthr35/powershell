@@ -2,3 +2,5 @@
 Connect-MgGraph -Scopes "Directory.ReadWrite.All", "User.ReadWrite.All", "Group.ReadWrite.All"
 
 $Groups = Get-MgGroup
+
+$Groups
