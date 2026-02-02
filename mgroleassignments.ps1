@@ -6,10 +6,10 @@ $Roles = Get-MgRoleManagementDirectoryRoleDefinition
 
 Write-Host "Found $($Roles.Count) directory roles"
 
-# Initialize List for role assignments
+# Initialize Role List
 $RoleAssignments = [System.Collections.Generic.List[PSCustomObject]]::new()
 
-# Process each role
+# Process Roles
 foreach ($Role in $Roles) {
     # Get assignments for current role
     $Assignments = Get-MgRoleManagementDirectoryRoleAssignment -Filter "roleDefinitionId eq '$($Role.Id)'" -ErrorAction Stop
