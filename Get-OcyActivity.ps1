@@ -1,4 +1,4 @@
-# TODO: Get quick sign in activities of specified User or Users...
+# TODO: Get quick sign in activities of specified User or Users
 
 [CmdletBinding()]
 Param(
