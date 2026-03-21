@@ -16,8 +16,6 @@ Process {
 	$userList = New-Object System.Collections.Generic.List[PSObject]
 
 	foreach ($user in $Users) {
-		# Look up quick Mailbox Stats
-		# TODO
 		
 		$userList.Add([PSCustomObject]@{
 				DisplayName = $temp.DisplayName
