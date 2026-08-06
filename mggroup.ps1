@@ -26,7 +26,3 @@ if ($groupExists) {
     Write-Host "Group does not exist, creating the group!"
     New-MgGroup -DisplayName 'GroupScriptTestGraph' -MailEnabled:$False -MailNickName 'grouptestgraph' -SecurityEnabled  
 }
-
-# Todo
-# Organize results into an Object List
-# Write all Groups to a .csv file?
