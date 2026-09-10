@@ -25,6 +25,7 @@ foreach ($device in $devices) {
     # TODO: Organize information and write to CSV? Possibly SQL for display on internal website?
     
     <#
+    // Options we have for devices
     Write-Host "Device Name:" $device.DeviceName 
     Write-Host "Device ID:" $device.Id
     Write-Host "Compliance State:" $device.ComplianceState 
