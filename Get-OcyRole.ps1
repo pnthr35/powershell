@@ -1,4 +1,4 @@
-# Quickly get users for a specific Role
+# Get users for a specific Role
 Connect-MgGraph -Scopes "Directory.Read.All", "User.Read.All", "Group.Read.All"
 
 # Todo: Revise to get Role from command input
