@@ -22,7 +22,7 @@ foreach ($device in $devices) {
     $complianceCheckReport.Add($reportItem)
 
     # Get Device information, the most important information is detailed here
-    # TODO: Organize information and write to CSV? Possibly SQL for display on internal website?
+    # TODO: Organize information and write to CSV, Possibly SQL for display on internal website?
     
     <#
     // Options we have for devices
