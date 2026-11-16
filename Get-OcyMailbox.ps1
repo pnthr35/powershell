@@ -16,7 +16,6 @@ Process {
 	$userList = New-Object System.Collections.Generic.List[PSObject]
 
 	foreach ($user in $Users) {
-		
 		$userList.Add([PSCustomObject]@{
 				DisplayName = $temp.DisplayName
 				LastSignIn  = $temp.SignInActivity.LastNonInteractiveSignInDateTime
